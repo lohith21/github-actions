@@ -13,8 +13,8 @@ jobs:
         - name: Execute cowsay CMD
           run: cowsay -f dragon "Run for cover, i am a DRAGON....RAWR" >>dragon.txt
 
-        - name: Sleep for 40 seconds
-          run: sleep 40
+        - name: Sleep for 60 seconds
+          run: sleep 60
 
         - name: Build
           run: echo "Building ......."
@@ -22,8 +22,8 @@ jobs:
     test_job:
         runs-on: ubuntu-latest
         steps:
-        - name: sleep for 20 seconds
-          run: sleep 20
+        - name: sleep for 30 seconds
+          run: sleep 30
 
         - name: test if file exists
           run: grep -i "dragon" dragon.txt
@@ -34,8 +34,8 @@ jobs:
     deploy_job:
         runs-on: ubuntu-latest
         steps:
-        - name: sleep for 20 seconds
-          run: sleep 20
+        - name: sleep for 30 seconds
+          run: sleep 30
 
         - name: reat the file
           run: cat dragon.txt
