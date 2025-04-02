@@ -12,4 +12,6 @@ jobs:
           run: ls -ltra
 
         - name: Execute a shell script
-          run: ./aschii-script.sh
+          run: |
+            chmod +x aschii-script.sh
+            ./aschii-script.sh
