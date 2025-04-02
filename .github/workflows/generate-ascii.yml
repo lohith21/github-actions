@@ -23,6 +23,7 @@ jobs:
           run: echo "Building ......."
 
     test_job:
+        needs: build_job
         runs-on: ubuntu-latest
         steps:
         - name: Download the file
@@ -37,6 +38,7 @@ jobs:
           run: echo "Testing ......."
           
     deploy_job:
+        needs: test_job
         runs-on: ubuntu-latest
         steps:
         - name: Download the file
