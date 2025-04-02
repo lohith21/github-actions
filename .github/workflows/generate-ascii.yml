@@ -1,7 +1,7 @@
 name: Generate ASCII Artwork
 on: push
 jobs:
-    ascii_job:
+    build_job:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout repo
@@ -13,11 +13,32 @@ jobs:
         - name: Execute cowsay CMD
           run: cowsay -f dragon "Run for cover, i am a DRAGON....RAWR" >>dragon.txt
 
-        - name: Test file exists
+        - name: Sleep for 30 seconds
+          run: sleep 30
+
+        - name: Build
+          run: echo "Building ......."
+
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleep for 30 seconds
+          uses: sleep 30
+
+        - name: test if file exists
           run: grep -i "dragon" dragon.txt
 
-        - name: Read file
-          run: cat dragon.txt
+        - name: Test
+          run: echo "Testing ......."
+          
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleep for 30 seconds
+          run: sleep 30
 
-        - name: List repo files
-          run: ls -ltra
+        - name: reat the file
+          uses: cat dragon.txt
+
+        - name: Deploy
+          run: echo "Deploying ......."
