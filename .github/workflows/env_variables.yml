@@ -2,6 +2,9 @@ name: Step Env Example
 
 on: push
 
+env:
+    GLOBAL_VAR: "I am a Global Var"
+
 jobs:
   step-env:
     runs-on: ubuntu-latest
@@ -9,7 +12,7 @@ jobs:
       - name: Set step-only var
         env:
           STEP_VAR: "I'm a step env var"
-        run: echo $STEP_VAR
+        run: echo $STEP_VAR, {{ env.GLOBAL_VAR }}
 
   job-env:
     runs-on: ubuntu-latest
@@ -17,5 +20,5 @@ jobs:
       JOB_VAR: "This is Job Env"
     steps:
       - name: Show Job Var
-        run: echo {{ env.STEP_VAR }}
+        run: echo {{ env.JOB_VAR }}, $GLOBAL_VAR
         
