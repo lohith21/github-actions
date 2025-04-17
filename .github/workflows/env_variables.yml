@@ -1,0 +1,14 @@
+name: Step Env Example
+
+on: push
+
+jobs:
+  step-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set step-only var
+        env:
+          STEP_VAR: "I'm a step env var"
+        run: echo $STEP_VAR
+
+        
