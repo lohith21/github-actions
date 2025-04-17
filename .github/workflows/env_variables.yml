@@ -12,7 +12,7 @@ jobs:
       - name: Set step-only var
         env:
           STEP_VAR: "I'm a step env var"
-        run: echo $STEP_VAR, {{ env.GLOBAL_VAR }}
+        run: echo $STEP_VAR, $GLOBAL_VAR
 
   job-env:
     runs-on: ubuntu-latest
@@ -20,5 +20,5 @@ jobs:
       JOB_VAR: "This is Job Env"
     steps:
       - name: Show Job Var
-        run: echo {{ env.JOB_VAR }}, $GLOBAL_VAR
+        run: echo $JOB_VAR, $GLOBAL_VAR
         
