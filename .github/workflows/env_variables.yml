@@ -11,4 +11,11 @@ jobs:
           STEP_VAR: "I'm a step env var"
         run: echo $STEP_VAR
 
+  job-env:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: "This is Job Env"
+    steps:
+      - name: Show Job Var
+        run: echo {{ env.STEP_VAR }}
         
