@@ -1,5 +1,7 @@
 name: Explore expression
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+    push:
 
 env:
     IMAGE_NAME: github-actions-nginx
