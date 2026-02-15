@@ -15,12 +15,21 @@ jobs:
             ls -ltra
             cat README.md
 
+        - name: install Cowsay program
+          run: sudo apt-get install cowsay -y
+
         - name: Generate ASCII Artwork
           run: cowsay -f dragon "Run for cover, I am a DRAGON......RAWR" >>dragon.txt
 
-        # - name: List files
-        #   run: ls
+        - name: Test file exists
+          run: grep -i "dragon" dragon.txt
+        
+        - name: read dragon.txt file
+          run: cat dragon.txt
 
+        - name: List repo files
+          run: ls -ltra
+          
         # - name: Read file
         #   run: cat README.md
 
