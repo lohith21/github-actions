@@ -1,5 +1,8 @@
 name: context data extract
-on: push
+on:
+  push:
+  workflow_dispatch:
+
 
 jobs:
     dump_contexts:
