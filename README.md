@@ -5,4 +5,4 @@ KodeKloud Github Action Training
  - Contribute to the upcoming project to migrate from Jenkins to Github Actions
 
 
-# Checking Workflow filters and Activities
+# Checking Workflow filters and Activities for feature branch
